@@ -1,0 +1,6 @@
+{
+  "name": "Abdishakur Gallery",
+  "description": "A cinematic minimalist image gallery showcasing premium fine art photography and AI imagery with live filters and custom prompt creation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

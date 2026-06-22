@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-headline: "Manrope", system-ui, sans-serif;
+  
+  --color-background: #121414;
+  --color-surface: #121414;
+  --color-surface-dim: #121414;
+  --color-surface-bright: #38393a;
+  --color-surface-container-lowest: #0c0f0f;
+  --color-surface-container-low: #1a1c1c;
+  --color-surface-container: #1e2020;
+  --color-surface-container-high: #282a2b;
+  --color-surface-container-highest: #333535;
+  --color-on-surface: #e2e2e2;
+  --color-on-surface-variant: #c1c7d3;
+  --color-inverse-surface: #e2e2e2;
+  --color-inverse-on-surface: #2f3131;
+  --color-outline: #8b919d;
+  --color-outline-variant: #414751;
+  --color-surface-tint: #a4c9ff;
+  --color-primary: #a4c9ff;
+  --color-on-primary: #00315d;
+  --color-primary-container: #4d93e5;
+  --color-on-primary-container: #002a51;
+  --color-inverse-primary: #0060ac;
+  --color-secondary: #c8c6c5;
+  --color-on-secondary: #313030;
+  --color-secondary-container: #4a4949;
+  --color-on-secondary-container: #bab8b7;
+  --color-tertiary: #c8c6c5;
+  --color-on-tertiary: #303030;
+  --color-tertiary-container: #929090;
+  --color-on-tertiary-container: #2a2a2a;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121414;
+}
+::-webkit-scrollbar-thumb {
+  background: #282a2b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333535;
+}
+
+/* Smooth Base Theme Styling */
+body {
+  background-color: #121414;
+  color: #e2e2e2;
+  font-family: var(--font-sans);
+}
+
+/* Entrance Animations */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom CSS Lens Filters targeting nested images */
+.filter-grayscale .gallery-img {
+  filter: grayscale(100%);
+}
+.filter-sepia .gallery-img {
+  filter: sepia(85%) contrast(90%);
+}
+.filter-blur .gallery-img {
+  filter: blur(5px) brightness(90%);
+}
+
+.gallery-img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+/* Lightbox Micro-animation entrance */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
